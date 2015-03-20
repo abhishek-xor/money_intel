@@ -1,5 +1,13 @@
-<div class="progress">
-  <div class="progress-bar progress-bar-success" style="width: 35%">
+
+<div id="prsogress">
+	<div id="slider">
+		<div id="red"></div>
+	    <div id="yellow"></div>
+	    <div id="green"></div>
+	</div>
+	<input id="value" value="60% stock current" readonly />
+	<!-- <button id="btn">Change Colors</button> -->
+  <!-- <div class="progress-bar progress-bar-success" style="width: 35%">
     <span class="sr-only">35% Complete (success)</span>
   </div>
   <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
@@ -7,5 +15,17 @@
   </div>
   <div class="progress-bar progress-bar-danger" style="width: 10%">
     <span class="sr-only">10% Complete (danger)</span>
-  </div>
+  </div> -->
 </div>
+<script>
+$("#slider").slider({
+	min: 0,
+	max: 100,
+	value: 60,
+    slide: function(event, ui) {
+    	value = ui.value + "% stock current"
+        $( "#value" ).val( value );
+    }
+});
+
+</script>

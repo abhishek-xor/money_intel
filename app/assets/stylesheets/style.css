@@ -1,0 +1,44 @@
+.off-track {
+	border-radius: 25px;
+	color: #E26634;
+}
+
+.off-track-settings {
+	border-radius: 30px;
+}
+
+.plan-drop-down {
+	color: #3381D0;
+	font-weight: bold;
+}
+
+#slider {
+    height: 10px;
+    width: 200px;
+}
+#red {
+    height: 10px;
+    width: 118px;
+    background-color: #ED1C24;
+    float: left;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#green {
+    height: 10px;
+    width: 40px;
+    background-color: #22B14C;
+    float: left;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#yellow {
+    height: 10px;
+    width: 40px;
+    background-color: #FFF200;
+    float: left;
+}
+#value {
+    padding-top: 0px;
+    border: 0;
+}
