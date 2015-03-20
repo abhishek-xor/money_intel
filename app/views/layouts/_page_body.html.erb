@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+  <div class="panel-heading" style="background-color: white;">
+    <%= render 'layouts/sub_header' %>
+  </div>
+  
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3" id="left_menu">
+        <%= render 'layouts/left_menu' %>
+      </div>
+      <div class="col-md-9" id="page_content">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</div>
