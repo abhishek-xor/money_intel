@@ -80,14 +80,11 @@ section {
   @extend .btn-primary;
   @extend .btn-xs;
 }
-.form-control{
- width:40%; 
-}
-h4.important!{color:#240752;}
+
 .primary-text{
   color:#23527c;
 }
-hr { 
+.hr-class { 
   background-color: #240752;
   height: 2px; 
   border: 0;
@@ -99,4 +96,20 @@ hr {
 .margin-20-20{
   margin-right:20px;
   margin-bottom: 20px;
+}
+#education_questionnarie_form.form-horizontal .control-label{
+  /* text-align:right; */
+  text-align:left;
+  /*background-color:#ffa;*/
+  font-weight: normal;
+}
+.margin-left-15{
+  margin-left:15px;
+}
+
+.margin-left-25{
+  margin-left:25px;
+}
+.margin-top-20{
+  margin-top:20px;
 }
