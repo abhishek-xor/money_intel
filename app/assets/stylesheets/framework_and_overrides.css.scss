@@ -80,3 +80,23 @@ section {
   @extend .btn-primary;
   @extend .btn-xs;
 }
+.form-control{
+ width:40%; 
+}
+h4.important!{color:#240752;}
+.primary-text{
+  color:#23527c;
+}
+hr { 
+  background-color: #240752;
+  height: 2px; 
+  border: 0;
+}
+.gi-2x{font-size: 2em;}
+.gi-3x{font-size: 3em;}
+.gi-4x{font-size: 4em;}
+.gi-5x{font-size: 5em;}
+.margin-20-20{
+  margin-right:20px;
+  margin-bottom: 20px;
+}
