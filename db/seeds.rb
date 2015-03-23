@@ -7,3 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
+
+if InvestmentType.first.blank?
+	InvestmentType.create([{ name: "Maximizing gains" }, { name: "Minimizing losses" }, { name: "Both qually" }])
+end
+
+if InvestmentChoice.first.blank?
+	InvestmentChoice.create([{ name: "Sell all your investment" }, { name: "Sell some of your investment" }, 
+		{ name: "Keep all of your investments" }, { name: "Buy more investments" }])
+end
+
+
