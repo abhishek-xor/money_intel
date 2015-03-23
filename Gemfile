@@ -20,6 +20,7 @@ gem 'pg'
 gem 'pundit'
 gem 'therubyracer', :platform=>:ruby
 gem 'upmin-admin'
+gem "lol_dba"
 
 group :development do
   gem 'better_errors'
