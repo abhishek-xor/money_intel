@@ -13,4 +13,9 @@
 #
 
 class RiskProfile < ActiveRecord::Base
+	belongs_to :investment_type
+	belongs_to :investment_choice
+
+	validates :annual_income, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+	validates :other_retirement_savings, numericality: { only_integer: true, greater_than_or_equal_to: 0,:allow_nil => true }
 end

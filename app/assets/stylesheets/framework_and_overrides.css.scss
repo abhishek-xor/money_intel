@@ -113,3 +113,32 @@ section {
 .margin-top-20{
   margin-top:20px;
 }
+
+.margin-top-10{
+  margin-top:10px;
+}
+
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"]{
+  margin-left:0px;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #240752;
+  border-color: #190638;
+}
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger.focus,
+.btn-danger:active,
+.btn-danger.active,
+.open > .dropdown-toggle.btn-danger {
+  color: #fff;
+  background-color: #100620;
+  border-color: #421688;
+}
+.btn-danger:active,
+.btn-danger.active,
+.open > .dropdown-toggle.btn-danger {
+  background-image: none;
+}
