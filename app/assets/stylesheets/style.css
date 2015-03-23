@@ -43,6 +43,68 @@
     border: 0;
 }
 
+.well-custom-roth-and-tax {
+	padding: 5px !important;
+    width: 335px;
+	border-radius: 0px !important;
+}
+
+.well-custom-retirement-age {
+	padding: 5px !important;
+	width: 250px;
+	/*margin-left: 12px;*/
+	border-radius: 0px !important;
+}
+
+.education-new-roth-and-tax {
+	height: 225px;
+	border-right: 1px solid;
+	border-bottom: 1px solid;
+	border-color: #ddd;
+	padding-top: 15px
+}
+
+.education-new-retirement-age {
+	border-bottom: 1px solid;
+	border-color: #ddd;
+	height: 225px;
+	padding-top: 15px
+}
+
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
 /*.panel-body {
 	padding-top: 0px !important;
 }*/
+
+.box {
+    padding-top: 15px;
+}
+.box .inner {
+    background-color: #fff;
+}
+
+#slider2 {
+    width: 100%;
+    background:#3381D0;
+    border-radius:5px;
+}

@@ -45,20 +45,295 @@
 			<a href="#" class="btn btn-default off-track-settings"><span class="glyphicon glyphicon-cog"></span></a>
 		</div>
 	</div>
-
-
   </div>
 
-  <div class="panel-body">
+  <div class="panel-body" style="padding-top: 0 !important; padding-bottom: 0 !important">
   	<div class="row">
-  	  <div class="col-md-3" id="left_menu"  style="border-right: 1px solid;border-color:#ddd;">
+  	  <div class="col-md-3" id="left_menu"  style="border-right: 1px solid;border-color:#ddd;padding-top: 15px">
   	    <%= render 'layouts/left_menu' %>
   	  </div>
-  	  <div class="col-md-9" id="page_content">
-  	    <%= yield %>
+
+  	  <div class="col-md-5 education-new-roth-and-tax" id="left_menu"  style="">
+  	  	<div class="col-md-12">
+	  	    <div style="padding: 5px !important" class="col-md-12 well well-custom-roth-and-tax">
+	  	    <p>Recommended Monthly Tradional Contribution &nbsp; 
+	  	    	<i class="glyphicon glyphicon-question-sign"></i>
+	  	    </p>
+	  	    <p><span style="font-size: 20px;">8%</span> or $500 per month</p>
+	  	    <!-- <div style="color:#4089D2">Conservative &nbsp; <i class="glyphicon glyphicon-question-sign"></i></div> -->
+	  	    </div>
+	  	</div>
+	  	<div class="col-md-12">
+	  		<div class="col-md-6">
+	  			<div class="inner-addon right-addon">
+	  			    <input type="text" class="form-control" />
+	  			    <i class="glyphicon" style="padding-right:35px">%</i>
+	  			    <!-- <button class="btn btn-small" type="button"> -->
+	  			    	<i class="glyphicon glyphicon-triangle-left" id="cursor-left" style="padding-right:20px;cursor:pointer"></i>
+	  			    <!-- </button> -->
+	  			    <!-- <button class="btn btn-small" type="button"> -->
+	  			    <i class="glyphicon glyphicon-triangle-right" id="cursor-right"></i>
+	  				<!-- </button> -->
+	  			</div>
+	  		</div>
+	  		<div class="col-md-6">
+	  			<div class="btn-group btn-toggle" style="padding: 1px;"> 
+	  			    <button class="btn btn-sm btn-default">PRE-TAX</button>
+	  			    <button class="btn btn-sm btn-primary active">ROTH</button>
+	  			  </div>
+	  		</div>
+	  	</div>
+
+	  	<div class="box col-md-12">
+	  		<div class="col-md-12" style="text-align:center">
+	  		<button style="width:200px;" type="button" class="btn btn-primary">SUBMIT</button>
+	  		<p style="color:#ACA3B2">Changes have been applied</p>
+	  		</div>
+	  	</div>
   	  </div>
+
+
+  	  <div class="col-md-4 education-new-retirement-age" id="left_menu"  style="">
+  	  	<div class="col-md-12" style="height: 90px;">
+  	    	<div style="padding: 5px !important" class="well well-custom-retirement-age">
+  	    		<p>Estimate Retirement Income &nbsp; <i class="glyphicon glyphicon-question-sign"></i></p>
+  	    		<p><span style="font-size: 20px;color:#035D0E">$3127</span></p>
+  	    	</div>
+  		</div>
+  		
+  		<div class="col-md-12">
+		RETIREMENT AGE
+  				<input id="value" value="27" readonly style="width:220px"/>
+  				<input id="value" value="100" readonly style="width: 27px;"/>
+  			
+  		</div>
+  			
+
+		<div class="col-md-12">
+			<div id="slider2">
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<input id="value" value="Age 65 current" readonly />
+		</div>
+  	  </div>
+
+  	  <div class="col-md-9" id="page_content">
+  	    <%#= yield %>
+  	    <div class="col-md-12"  style="padding:15px 15px 0px 15px">
+  	    	HOLDINGS
+  	    	<hr style="margin: 0px ! important;" />
+  	    	<table class="table">
+  	    	      <tbody>
+
+  	    	        <tr class="active">
+  	    	          <th scope="row">US Large Caps Stocks</th>
+  	    	          <td></td>
+  	    	          <td style="font-weight: bold;">Target:<br />
+  	    	          Total:
+  	    	      		</td>
+  	    	          <td>
+  	    	          	<div style="text-align:right;">
+  	    	          		15%<br />
+  	    	          		35%
+  	    	          	</div>
+  	    	          </td>
+  	    	        </tr>
+
+  	    	        <tr>
+  	    	          <th scope="row">
+  	    	          	<div style="margin-left: 20px;font-weight:normal;">
+  	    	          		Vanguard Total Stock Marker<br />
+  	    	          		Oakmark 1<br />
+  	    	          		Dodge & Cox Stock<br />
+  	    	          		T.Rowe Price Value
+  	    	          	</div> 
+  	    	          </th>
+  	    	          <td></td>
+  	    	          <td></td>
+  	    	          <td>
+  	    	          	<div style="text-align:right;">
+  	    	          		15%<br />
+  	    	          		100%<br />
+  	    	          		35%<br />
+  	    	          		45% 
+  	    	          	</div>
+  	    	          </td>
+  	    	        </tr>
+
+  	    	          <tr class="active">
+  	    	            <th scope="row">US Large Caps Stocks</th>
+  	    	            <td></td>
+  	    	            <td style="font-weight: bold;">Target:<br />
+  	    	            Total:
+  	    	        		</td>
+  	    	            <td>
+  	    	            	<div style="text-align:right;">
+  	    	            		15%<br />
+  	    	            		35%
+  	    	            	</div>
+  	    	            </td>
+  	    	          </tr>
+
+  	    	          <tr>
+  	    	            <th scope="row">
+  	    	            	<div style="margin-left: 20px;font-weight:normal;">
+  	    	            		Vanguard Total Stock Marker<br />
+  	    	            		Oakmark 1<br />
+  	    	            		Dodge & Cox Stock<br />
+  	    	            		T.Rowe Price Value
+  	    	            	</div> 
+  	    	            </th>
+  	    	            <td></td>
+  	    	            <td></td>
+  	    	            <td>
+  	    	            	<div style="text-align:right;">
+  	    	            		15%<br />
+  	    	            		100%<br />
+  	    	            		35%<br />
+  	    	            		45% 
+  	    	            	</div>
+  	    	            </td>
+  	    	          </tr>
+
+  	    	            <tr class="active">
+  	    	              <th scope="row">US Large Caps Stocks</th>
+  	    	              <td></td>
+  	    	              <td style="font-weight: bold;">Target:<br />
+  	    	              Total:
+  	    	          		</td>
+  	    	              <td>
+  	    	              	<div style="text-align:right;">
+  	    	              		15%<br />
+  	    	              		35%
+  	    	              	</div>
+  	    	              </td>
+  	    	            </tr>
+
+  	    	            <tr>
+  	    	              <th scope="row">
+  	    	              	<div style="margin-left: 20px;font-weight:normal;">
+  	    	              		Vanguard Total Stock Marker<br />
+  	    	              		Oakmark 1<br />
+  	    	              		Dodge & Cox Stock<br />
+  	    	              		T.Rowe Price Value
+  	    	              	</div> 
+  	    	              </th>
+  	    	              <td></td>
+  	    	              <td></td>
+  	    	              <td>
+  	    	              	<div style="text-align:right;">
+  	    	              		15%<br />
+  	    	              		100%<br />
+  	    	              		35%<br />
+  	    	              		45% 
+  	    	              	</div>
+  	    	              </td>
+  	    	            </tr>
+
+  	    	              <tr class="active">
+  	    	                <th scope="row">US Large Caps Stocks</th>
+  	    	                <td></td>
+  	    	                <td style="font-weight: bold;">Target:<br />
+  	    	                Total:
+  	    	            		</td>
+  	    	                <td>
+  	    	                	<div style="text-align:right;">
+  	    	                		15%<br />
+  	    	                		35%
+  	    	                	</div>
+  	    	                </td>
+  	    	              </tr>
+
+  	    	              <tr>
+  	    	                <th scope="row">
+  	    	                	<div style="margin-left: 20px;font-weight:normal;">
+  	    	                		Vanguard Total Stock Marker<br />
+  	    	                		Oakmark 1<br />
+  	    	                		Dodge & Cox Stock<br />
+  	    	                		T.Rowe Price Value
+  	    	                	</div> 
+  	    	                </th>
+  	    	                <td></td>
+  	    	                <td></td>
+  	    	                <td>
+  	    	                	<div style="text-align:right;">
+  	    	                		15%<br />
+  	    	                		100%<br />
+  	    	                		35%<br />
+  	    	                		45% 
+  	    	                	</div>
+  	    	                </td>
+  	    	              </tr>
+
+  	    	                <tr class="active">
+  	    	                  <th scope="row">US Large Caps Stocks</th>
+  	    	                  <td></td>
+  	    	                  <td style="font-weight: bold;">Target:<br />
+  	    	                  Total:
+  	    	              		</td>
+  	    	                  <td>
+  	    	                  	<div style="text-align:right;">
+  	    	                  		15%<br />
+  	    	                  		35%
+  	    	                  	</div>
+  	    	                  </td>
+  	    	                </tr>
+
+  	    	                <tr>
+  	    	                  <th scope="row">
+  	    	                  	<div style="margin-left: 20px;font-weight:normal;">
+  	    	                  		Vanguard Total Stock Marker<br />
+  	    	                  		Oakmark 1<br />
+  	    	                  		Dodge & Cox Stock<br />
+  	    	                  		T.Rowe Price Value
+  	    	                  	</div> 
+  	    	                  </th>
+  	    	                  <td></td>
+  	    	                  <td></td>
+  	    	                  <td>
+  	    	                  	<div style="text-align:right;">
+  	    	                  		15%<br />
+  	    	                  		100%<br />
+  	    	                  		35%<br />
+  	    	                  		45% 
+  	    	                  	</div>
+  	    	                  </td>
+  	    	                </tr>
+
+  	    	      </tbody>
+  	    	    </table>
+  	    </div>
+  	    <div  class="col-md-12">
+  	    	<hr style="margin: 2px ! important;height:1px;border:none;color:#333;background-color:#333;" />
+  	        <hr style="margin: 2px ! important;height:1px;border:none;color:#333;background-color:#333;" />
+  	    </div>
+  	    <div class="col-md-12">
+  	    	<table class="table table-all" style="border" >
+  	    	      <tbody>
+  	    	        <tr>
+  	    	          <th style="border-top: none; ">Total</th>
+  	    	          <td style="border-top: none; "></td>
+  	    	          <td style="border-top: none; "></td>
+  	    	          <td style="border-top: none; ">
+  	    	          	<div style="text-align:right;">
+  	    	          		100%
+  	    	          	</div>
+  	    	          </td>
+  	    	        </tr>
+  	    	    </tbody>
+  	    	</table>
+  	    </div>
+  	  </div>
+
   	</div>
   </div>
 
 </div>
 
+<style>
+.table-all th, .table-all td { 
+     border-top: none; 
+ }
+</style>
