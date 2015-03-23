@@ -50,7 +50,22 @@
   <div class="panel-body" style="padding-top: 0 !important; padding-bottom: 0 !important">
   	<div class="row">
   	  <div class="col-md-3" id="left_menu"  style="border-right: 1px solid;border-color:#ddd;padding-top: 15px">
-  	    <%= render 'layouts/left_menu' %>
+  	    <%#= render 'layouts/left_menu' %>
+  	    <label>ALLOCATION</label>
+
+  	    <%= render 'layouts/progressbar' %>
+
+  	    <!-- <div class="well"></div> -->
+  	    <div id="container" style="min-width: 210px; height: 300px; max-width: 600px; margin: 0 auto"></div>
+  	    <%#= image_tag 'pie_chart.jpg' %>
+  	    <!-- < %= render 'static_pages/pie_chart' %> -->
+  	    <!-- <h4>See current holdings</h4> -->
+
+  	    <div class="well" style="padding: 5px !important">
+  	    Risk
+  	    <div style="color:#4089D2">Conservative &nbsp <i class="glyphicon glyphicon-question-sign"></i></div>
+  	    </div> 
+
   	  </div>
 
   	  <div class="col-md-5 education-new-roth-and-tax" id="left_menu"  style="">
