@@ -1,126 +1,111 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-  	<div class="row">
-	  	<div class="col-md-3">
-			<select class="form-control ">
-				<option> 401(k) Plan</option> 
-				<option> Profit Sharing Plan</option> 
-				<option> Thrift Savings Plan</option> 
-				<option> ESOP </option> 
-				<option> Money Purchase Pension Plan</option> 
-				<option> Keogh Profit Sharing/401(k)</option>  
-				<option> Keogh Money Purchase Pension Plan</option> 
-				<option> 403(b) Plan</option> 
-				<option> 457 Plan</option> 
-				<option> No Definition </option> 
-			</select>
+	<div class="panel-heading">
+		<div class="row">
+			<div class="col-md-3">
+				<select class="form-control ">
+					<option> 401(k) Plan</option> 
+					<option> Profit Sharing Plan</option> 
+					<option> Thrift Savings Plan</option> 
+					<option> ESOP </option> 
+					<option> Money Purchase Pension Plan</option> 
+					<option> Keogh Profit Sharing/401(k)</option>  
+					<option> Keogh Money Purchase Pension Plan</option> 
+					<option> 403(b) Plan</option> 
+					<option> 457 Plan</option> 
+					<option> No Definition </option> 
+				</select>
+			</div>
 		</div>
 	</div>
-  </div>
-  <div class="panel-body">
-  	<div class="row">
-    	<div class="col-md-9">
-    		<h4 style="color:#240752" class="margin-left-25">Welcome to Money Intel!</h4>
-    		<p class="primary-text margin-left-25"> Money Intel is here to help you understand how to get the most out of your company's retirement plan. With just a little bit of information about yourself and your risk profile, we can help you build a diversified portfolio that is right for you.</p>
-    		<form class="form-horizontal" name="education_questionnarie_form" id="education_questionnarie_form" method="post">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-9">
+				<h4 style="color:#240752" class="margin-left-25">Welcome to Money Intel!</h4>
+				<p class="primary-text margin-left-25"> Money Intel is here to help you understand how to get the most out of your company's retirement plan. With just a little bit of information about yourself and your risk profile, we can help you build a diversified portfolio that is right for you.</p>
+
+				<%= form_for @risk_profile, url: { action: "create" }, :html => {method: "post",class: "form-horizontal",id: "risk_profile_form" } do |f| %>
 				<fieldset class="margin-left-25">
+					<% if @risk_profile.errors.any? %>
+				      <div id="error_explanation" class="alert-danger col-sm-12">
+				        <h5><%= pluralize(@risk_profile.errors.count, "error") %> prohibited this Questionnaire from being saved:</h5>
+				          <ul>
+				          <% @risk_profile.errors.full_messages.each do |message| %>
+				            <li><%= message %></li>
+				          <% end %>
+				          </ul>
+				      </div>
+				    <% end %>
+					<div class="form-group">
+						<%= f.label :annual_income, class: "col-md-6 control-label" %>
+						<div class="col-md-3">
+							<%= f.text_field :annual_income,class: "form-control input-md", placeholder: "$" %>
+						</div>
+					</div>
 
 					<div class="form-group">
-					  <label class="col-md-6 control-label" for="annual_income ">Annual Income </label>  
-					  <div class="col-md-3">
-					  	<input id="annual_income " name="annual_income " type="text" placeholder="$" class="form-control input-md">
-					  </div>
+						<%= f.label 'Other Retirement Savings', class: "col-md-6 control-label" %>
+						<div class="col-md-3">
+							<%= f.text_field :other_retirement_savings,class: " radio form-control input-md", placeholder: "$" %>
+						</div>
 					</div>
 					<div class="form-group">
-					  <label class="col-md-6 control-label" for="other_savings">Other Retirement Savings </label>  
-					  <div class="col-md-3">
-					  <input id="other_savings" name="other_savings" type="text" placeholder="$" class="form-control input-md">
-					  </div>
-					</div>
-					<div class="form-group"><label class="margin-left-15 control-label">When investing your money, which do you care about more? </label>  
+						<label class="margin-left-15 control-label">When investing your money,which do you care about more? </label>  
 					</div>
 					<div class="form-group">
-					  <div class="col-md-6"></div>
-					  <div class="col-md-6">
-					  	<div class="radio">
-						  <label>
-						    <input type="radio"name="radio_question_one" value="1" checked>
-						    Maximizing gains
-						  </label>
+						<div class="col-md-6"></div>
+						<div class="col-md-6">
+							<%=collection_radio_buttons(:risk_profile, :investment_type_id, InvestmentType.all, :id, :name, checked:investment_type_selection(@risk_profile.investment_type_id)) do |b| %>
+							<div class="radio">
+								<%=b.radio_button%>
+								<%=b.label%>
+							</div>
+							<%end%>
 						</div>
-					  	<div class="radio">
-						  <label>
-						    <input type="radio" name="radio_question_one" id="radio_question_one" value="2" >
-						  	Minimizing losses
-						  </label>
-						</div>
-					  	<div class="radio">
-						  <label>
-						    <input type="radio" name="radio_question_one" id="radio_question_one" value="3">
-						     Both equally
-						  </label>
-						</div>
-					  </div>
-					</div>
-					<div class="form-group"><label class="margin-left-15 control-label">Stock markets are often volatile. If your investment portfolio lost 10% of its value in a month, what would you do? </label>  
 					</div>
 					<div class="form-group">
-					  <div class="col-md-6 "></div>  
-					  <div class="col-md-6">
-					  	<div class="radio">
-						  <label>
-						    <input type="radio" name="radio_question_two" id="radio_question_two" value="1" checked>
-						    Sell all of your investments
-						  </label>
+						<label class="margin-left-15 control-label">Stock markets are often volatile. If your investment portfolio lost 10% of its value in a month, what would you do?  </label>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6"></div>
+						<div class="col-md-6">
+							<%=collection_radio_buttons(:risk_profile, :investment_choice_id, InvestmentChoice.all, :id, :name, checked:
+							investment_choice_selection(@risk_profile.investment_choice_id)) do |b| %>
+							<div class="radio">
+								<%=b.radio_button%>
+								<%=b.label%>
+							</div>
+							<%end%>
 						</div>
-					  	<div class="radio">
-						  <label>
-						    <input type="radio" name="radio_question_two" id="radio_question_two" value="2" >
-						  	Sell some of your investments
-						  </label>
-						</div>
-					  	<div class="radio">
-						  <label>
-						    <input type="radio" name="radio_question_two" id="radio_question_two" value="3">
-						     Keep all of your investments
-						  </label>
-						</div>
-					  	<div class="radio">
-						  <label>
-						    <input type="radio" name="radio_question_two" id="radio_question_two" value="4">
-						     Buy more investments 
-						  </label>
-						</div>
-					  </div>
 					</div>
 					<div class="form-group ">
-					  <div class="col-md-6 "></div>  
-					  	<div class="col-md-6">
-							<button id="submit_questionnaire" name="submit_questionnaire" class="btn btn-primary margin-top-20">Save Your Plan</button>
+						<div class="col-md-6 "></div>  
+						<div class="col-md-6">
+							<%=f.submit 'Save Your Plan', class: "primary margin-top-20 btn btn-primary"%>
 						</div>
 					</div>
 
-			</fieldset>
-			</form>
-    	</div>
-    	<div class="col-md-3">
-    		<div class="primary-text">Privacy & Security </div>
-    		<h4 style="color:#240752">Money Intel's Promise </h4>
-    		<hr class="hr-class">
-    		<div>
-    			<span class="glyphicon glyphicon-lock gi-2x  margin-20-20"></span>
-    			<span class="primary-text">We promise to keep your data private and secure! </span>
-    		</div>
-    		<hr class="hr-class">
-    		<div>
-    			<span class="glyphicon glyphicon-alert gi-1x margin-20-20"></span>
-    			<span class="primary-text">Bank Level Security</span></br>
-    			<span class="glyphicon glyphicon-screenshot gi-1x margin-20-20"></span>
-    			<span class="primary-text">Browser Encryption </span></br>
-    			<span class="glyphicon glyphicon-eye-open gi-1x margin-20-20"></span>
-    			<span class="primary-text">Privacy Protection </span></br>
-    		</div>
-    	</div>
-    </div>
-  </div>
+				</fieldset>
+
+				<%end%>
+			</div>
+			<div class="col-md-3">
+				<div class="primary-text">Privacy & Security </div>
+				<h4 style="color:#240752">Money Intel's Promise </h4>
+				<hr class="hr-class">
+				<div>
+					<span class="glyphicon glyphicon-lock gi-2x  margin-20-20"></span>
+					<span class="primary-text">We promise to keep your data private and secure! </span>
+				</div>
+				<hr class="hr-class">
+				<div>
+					<span class="glyphicon glyphicon-alert gi-1x margin-20-20"></span>
+					<span class="primary-text">Bank Level Security</span></br>
+					<span class="glyphicon glyphicon-screenshot gi-1x margin-20-20"></span>
+					<span class="primary-text">Browser Encryption </span></br>
+					<span class="glyphicon glyphicon-eye-open gi-1x margin-20-20"></span>
+					<span class="primary-text">Privacy Protection </span></br>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
