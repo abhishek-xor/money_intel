@@ -9,4 +9,5 @@
 #
 
 class InvestmentType < ActiveRecord::Base
+	has_one :risk_profile
 end

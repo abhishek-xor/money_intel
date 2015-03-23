@@ -69,11 +69,6 @@ $(function () {
 	       
 	});
 
-	$('form').submit(function(){
-		alert($(this["options"]).val());
-	    return false;
-	});
-
 	$("#slider").slider({
 		min: 0,
 		max: 100,
